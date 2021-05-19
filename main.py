@@ -75,36 +75,45 @@ class BaselineModel(nn.Module):
         super().__init__()
         self.backbone = models.resnet18(pretrained=True)
         self.dropout = nn.Dropout(.5)
+        self.linear3 = nn.Linear(1000, 128)
         self.linear1 = nn.Linear(1000, 128)
+        self.linear4 = nn.Linear(128, 6)
         self.linear2 = nn.Linear(128, 6)
 
     def forward(self, x):
         x = self.backbone(x)
-        x = self.dropout(x)
-        x = self.linear1(x)
-        x = self.dropout(x)
-        x = self.linear2(x)
-        return x
+        x1 = self.dropout(x)
+        x1 = self.linear1(x1)
+        x1 = self.dropout(x1)
+        x1 = self.linear2(x1)
+        x2 = self.dropout(x)
+        x2 = self.linear3(x2)
+        x2 = self.dropout(x2)
+        x2 = self.linear4(x2)
+        return x1, x2
 
 
-class Net(nn.Module):
+class BaselineRModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 6, 5)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16 * 5 * 5, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        self.backbone = models.resnet18(pretrained=True)
+        self.dropout = nn.Dropout(.5)
+        self.linear3 = nn.Linear(1000, 128)
+        self.linear1 = nn.Linear(1000, 128)
+        self.linear4 = nn.Linear(128, 1)
+        self.linear2 = nn.Linear(128, 1)
 
     def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
+        x = self.backbone(x)
+        x1 = self.dropout(x)
+        x1 = self.linear1(x1)
+        x1 = self.dropout(x1)
+        x1 = self.linear2(x1)
+        x2 = self.dropout(x)
+        x2 = self.linear3(x2)
+        x2 = self.dropout(x2)
+        x2 = self.linear4(x2)
+        return x1, x2
 
 
 def confusion_matrix(true_label, pred_label, num_class):
@@ -185,7 +194,8 @@ def plot_confusion_matrix(conf_mat, classes,
 def train_model(model, criterion, optimizer, scheduler, dataloaders, num_epochs=25,
                 device="cuda", writer=None, cathegory='ellipse'):
     since = time.time()
-
+    dict_labels = [[1, 0.4, 0, 0, 0, 0], [0.2, 1, 0.2, 0, 0, 0], [0, 0.2, 1, 0.2, 0, 0],
+                   [0, 0, 0.2, 1, 0.2, 0], [0, 0, 0, 0.2, 1, 0.2], [0, 0, 0, 0, 0.4, 1]]
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
     dataset_sizes = {k: len(v.dataset)for k, v in dataloaders.items()}
@@ -207,13 +217,23 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, num_epochs=
             n = 0
             for data in dataloaders[phase]:
                 inputs = data[0].to(device)
-                if cathegory == 'ellipse':
-                    labels = labels[1].to(device)
-                elif cathegory == 'polygone':
-                    labels = labels[2].to(device)
+                if 'ellipse' in cathegory:
+                    labels = data[1].to(device)
+                    labels = labels.to(device)
+                elif 'polygone' in cathegory:
+                    labels = data[2]
+                    labels = labels.to(device)
                 else:
-                    labels = labels[1:]
+                    labels = data[1:]
+                    labels[0] = labels[0].to(device)
+                    labels[1] = labels[1].to(device)
 
+                if 'infer' in cathegory:
+                    labels_new = []
+                    for label in labels:
+                        labels_new.append(dict_labels[int(label.cpu().numpy())])
+                    labels = torch.tensor(labels_new)
+                    labels = labels.to(device)
                 # zero the parameter gradients
                 optimizer.zero_grad()
 
@@ -221,17 +241,42 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, num_epochs=
                 # track history if only in train
                 with torch.set_grad_enabled(phase == 'train'):
                     outputs = model(inputs)
-                    _, preds = torch.max(outputs, 1)
-                    loss = criterion(outputs, labels)
+                    if 'ellipse' in cathegory:
+                        outputs = outputs[0].to(device)
+                    elif 'polygone' in cathegory:
+                        outputs = outputs[1].to(device)
+                    if 'hybrid' in cathegory:
+                        print(outputs[0].shape, labels[0].shape)
+                        loss = criterion(outputs[0], labels[0]) + criterion(outputs[1], labels[1])
+                    elif 'infer' in cathegory:
+                        loss = criterion(outputs, labels)
+                    elif 'regression' in cathegory:
+                        loss = criterion(outputs.float(), labels.float().unsqueeze(1))
+                    else:
+                        loss = criterion(outputs, labels)
 
                     # backward + optimize only if in training phase
                     if phase == 'train':
                         loss.backward()
                         optimizer.step()
+                    if 'regression' in cathegory and 'infer' not in cathegory:
+                        preds = outputs.int()
+                    elif 'hybrid' in cathegory:
+                        _, preds = torch.max(outputs[0], 1)
+                    else:
+                        _, preds = torch.max(outputs, 1)
 
                 # statistics
                 running_loss += loss.item() * inputs.size(0)
-                running_corrects += torch.sum(preds == labels.data)
+                if 'hybrid' in cathegory:
+                    running_corrects += torch.sum(preds == labels[0].data)
+                elif 'infer' in cathegory:
+                    _, labels =  torch.max(labels, 1)
+                    running_corrects += torch.sum(preds == labels.data)
+                elif 'regression' in cathegory:
+                    running_corrects += torch.sum(preds == labels.unsqueeze(1).data)
+                else:
+                    running_corrects += torch.sum(preds == labels.data)
                 writer.add_scalar("Loss/" + phase, loss, epoch)
                 n += len(labels)
                 writer.add_scalar("Accuracy/" + phase,
@@ -272,20 +317,50 @@ def test_model(model, dataloader, device, writer=None, debug='debug.csv', catheg
     errors = {i: [] for i in range(6)}
     #invTrans = NormalizeInverse([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     with open(debug, 'w') as f:
-        if cathegory == 'ellipse':
+        if cathegory == 'ellipse' or cathegory == "infer_regression_ellipse" or cathegory == 'regression_ellipse':
             f.write('ellipses, polygones, predicted ellipses\n')
-        elif cathegory == 'polygone':
+        elif cathegory == 'polygone' or cathegory == 'infer_regression_polygone' or cathegory == 'regression_polygone':
             f.write('polygone, ellipses, predicted polygones\n')
+        elif cathegory == 'hybrid':
+            f.write('ellipses, polygones, predicted ellipses, predicted polygones\n')
     for data in dataloader:
         inputs = data[0].to(device)
-        if cathegory == 'ellipse':
+        if 'ellipse' in cathegory:
             labels = data[1].to(device)
             others = data[2]
-        elif cathegory == 'polygone':
+        elif 'polygone' in cathegory:
             labels = data[2].to(device)
             others = data[1]
+        else:
+            labels = data[1:]
         outputs = model(inputs)
-        _, preds = torch.max(outputs, 1)
+        if 'ellipse' in cathegory:
+            outputs = outputs[0].to(device)
+        elif 'polygone' in cathegory:
+            outputs = outputs[1].to(device)
+        if 'hybrid' in cathegory:
+            _, preds0 = torch.max(outputs[0], 1)
+            _, preds1 = torch.max(outputs[1], 1)
+            with open(debug, 'a') as f:
+                preds0 = preds0.cpu()
+                preds1 = preds1.cpu()
+                for i, img in enumerate(inputs):
+                    print(labels[0][i], preds0[i])
+                    if labels[0][i] != preds0[i]:
+                        errors[int(preds0[i].detach().cpu().numpy())].append(img.detach().cpu()) #invTrans(img))
+                    if labels[1][i] != preds1[i]:
+                        errors[int(preds1[i].detach().cpu().numpy())].append(img.detach().cpu())
+                    f.write(str(int(labels[0][i].cpu().numpy())) + ',' + str(int(labels[1][i].cpu().numpy())) + ',' + str(int(preds0[i].cpu().numpy())) + ','+ str(int(preds1[i].cpu().numpy())) + '\n')
+            continue
+        if 'infer' in cathegory:
+            _, preds = torch.max(outputs, 1)
+        elif 'regression' in cathegory:
+            preds = outputs.int()
+        else:
+            _, preds = torch.max(outputs, 1)
+        pred.extend(list(preds.cpu().detach().numpy()))
+        true.extend(list(labels.cpu().detach().numpy()))
+        print(preds.shape, labels.shape)
         corrects = torch.sum(preds == labels.data)
         running_corrects += torch.sum(preds == labels.data)
         n += len(labels)
@@ -294,9 +369,11 @@ def test_model(model, dataloader, device, writer=None, debug='debug.csv', catheg
                           corrects.double() / len(labels), 0)
         with open(debug, 'a') as f:
             for i, img in enumerate(inputs):
+                print(labels[i], preds[i])
                 if labels[i] != preds[i]:
-                    errors[int(preds[i].detach().cpu().numpy())].append(img.detach().cpu()) #invTrans(img))
-                f.write(str(labels[i]) + ',' + str(others[i]) + ',' + str(preds[i]) + '\n')
+                    pass
+                    #errors[max(int(preds[i].detach().cpu().numpy()), 5)].append(img.detach().cpu()) #invTrans(img))
+                f.write(str(int(labels[i].cpu().numpy())) + ',' + str(int(others[i].cpu().numpy())) + ',' + str(int(preds[i].cpu().numpy())) + '\n')
             
         pred.extend(list(preds.cpu().detach().numpy()))
         true.extend(list(labels.cpu().detach().numpy()))
@@ -304,22 +381,25 @@ def test_model(model, dataloader, device, writer=None, debug='debug.csv', catheg
         if len(val):
             val = torch.stack(val)
             writer.add_image(str(key), torchvision.utils.make_grid(val), 0)
-    cm = confusion_matrix(true, pred, 6)
-    fg, axe = plot_confusion_matrix(cm, [str(i) for i in range(6)],
-                                    normalize=False, title="Confusion Matrix")
-    writer.add_figure("Confusion Matrix", fg)
-    fg, axe = plot_confusion_matrix(cm, [str(i) for i in range(6)],
-                                    normalize=True, title="Confusion Matrix")
-    writer.add_figure("Confusion Matrix Normilized", fg)
-
+    #cm = confusion_matrix(true, pred, 6)
+    #fg, axe = plot_confusion_matrix(cm, [str(i) for i in range(6)],
+    #                                normalize=False, title="Confusion Matrix")
+    #writer.add_figure("Confusion Matrix", fg)
+    #fg, axe = plot_confusion_matrix(cm, [str(i) for i in range(6)],
+    #                                normalize=True, title="Confusion Matrix")
+    #writer.add_figure("Confusion Matrix Normilized", fg)
 
 
 def main():
     device = "cuda"
-    t = None #transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-    writer = SummaryWriter()
-    trainset, valset, testset = datasplit(t,
-                                          t,
+    t = [transforms.Compose([
+        #transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ]), transforms.Compose([
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])]
+    trainset, valset, testset = datasplit(t[0],
+                                          t[1],
                                           "./shapes_dataset_HR",
                                           [.60, .10, .30],
                                           "labels.csv",
@@ -328,16 +408,37 @@ def main():
     dataloaders["val"] = DataLoader(valset, batch_size=320, shuffle=False)
     dataloaders["test"] = DataLoader(testset, batch_size=100, shuffle=False)
     dataloaders["train"] = DataLoader(trainset, batch_size=320, shuffle=True)
-    model = BaselineModel()#nn.Sequential(models.resnet18(pretrained=True), nn.Linear(1000, 6))
-    model = model.to(device)
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
-    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
-    #model = train_model(model, criterion, optimizer, exp_lr_scheduler, dataloaders,
-    #                       num_epochs=11, device="cuda", writer=writer, cathegory='ellipse)
-    model.load_state_dict(torch.load('model.pth'))
-    torch.save(model.state_dict(), 'model.pth')
-    test_model(model, dataloaders["test"], device, writer, 'ellipse.csv', 'ellipse')
+    def experiment():
+        writer = SummaryWriter()
+        if 'infer_regression' in cathegory:
+            model = BaselineModel()
+        elif 'regression' in cathegory:
+            model = BaselineRModel()
+        else:
+            model = BaselineModel()
+
+        model = model.to(device)
+        if 'infer' in cathegory:
+            criterion = nn.BCEWithLogitsLoss()
+            optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+            exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.4)
+        elif 'regression' in cathegory:
+            criterion = nn.MSELoss()
+            optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+            exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.8)
+        else:
+            criterion = nn.CrossEntropyLoss()
+            optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+            exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.4)
+        model = train_model(model, criterion, optimizer, exp_lr_scheduler, dataloaders,
+                            num_epochs=31, device="cuda", writer=writer, cathegory=cathegory)
+        torch.save(model.state_dict(), cathegory + '.pth')
+        test_model(model, dataloaders["test"], device, writer, cathegory + '.csv', cathegory)
+    cathegories = ['ellipse', 'polygone', 'infer_regression_ellipse', 'infer_regression_polygone', 'regression_ellipse', 'regression_polygone', 'hybrid']
+    for cathegory in cathegories:
+        if cathegory in ['ellipse', 'polygone', 'infer_regression_ellipse', 'infer_regression_polygone']:
+            continue
+        experiment()
 
 
 if __name__ == "__main__":
