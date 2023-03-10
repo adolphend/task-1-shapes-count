@@ -1,0 +1,175 @@
+Thz750  frequency  
+(
+  frequency_list   : sequence(750.0 GHz)
+)
+ 
+coordsystem  coor_sys  
+(
+)
+ 
+mask  planar_grid  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  near_dist        : 0.1E-01 m,
+  grid_type        : xy,
+  x_range          : struct(start: -0.499E-02, end: 0.5E-02, np: 100, unit: m),
+  y_range          : struct(start: -0.499E-02, end: 0.5E-02, np: 100),
+  truncation       : rectangular,
+  e_h              : e_field,
+  polarisation     : linear,
+  file_name        : mask.grd
+)
+ 
+maskcoord  coor_sys  
+(
+  origin           : struct(x: 0.0 m, y: 0.0 m, z: 0.1E-01 m)
+)
+
+ 
+simplepattern  simple_tapered_pattern  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  taper_angle      : 90.0,
+  taper            : struct(zxdb: -3.0, zydb: -3.0)
+)
+ 
+gaussianbeam  gaussian_beam_pattern  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  taper_angle      : 0.5729,
+  taper            : -0.512E-01,
+  far_forced       : off
+)
+ 
+gaussianbeamnearfielddef  gaussian_beam  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  beam_radius      : 0.1E-02 m,
+  phase_front_radius : 0.0 m,
+  polarisation     : linear_x,
+  factor           : struct(db: 0.0, deg: 0.0),
+  frequency_index_for_plot : 0
+)
+ 
+
+ 
+pomaskcluster  po_multi_face_scatterer  
+(
+  frequency        : ref(Thz750),
+  scatterer        : ref(maskcluster),
+  method           : po_plus_ptd,
+  po_points        : sequence
+    (    struct(start_face: -1, end_face: -1, po1: 30, po2: 30)
+    ),
+  edge_points      : sequence
+    (    struct(start_edge: -1, end_edge: -1, ptd: 3)
+    ),
+  ray_output       : all,
+  file_name        : maskcluster.cur
+)
+ 
+D3_PLOT  plot_settings  
+(
+  plot_accuracy    : 0.15E-03 m
+)
+ 
+Coor_sys_plot  coor_sys_plot  
+(
+  axis_length      : 0.3E-02 m
+)
+ 
+Output_points_plot  output_points_plot  
+(
+  plot_status      : off,
+  distance         : 0.15E-01 m
+)
+ 
+Feed_plot  feed_plot  
+(
+)
+ 
+Parallelogram_plot  parallelogram_plot  
+(
+)
+ 
+gridz0.01  planar_grid  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(maskcoord),
+  x_range          : struct(start: -0.1E-01, end: 0.1E-01, np: 100, unit: m),
+  y_range          : struct(start: -0.1E-01, end: 0.1E-01, np: 100),
+  file_name        : gridz0.01.grd
+)
+ 
+scenematerial  perfect_absorption  
+(
+)
+ 
+inversecoord  coor_sys  
+(
+  origin           : struct(x: 0.0 m, y: 0.0 m, z: 0.2E-01 m),
+  x_axis           : struct(x: -1.0, y: 0.0, z: 0.0)
+)
+ 
+
+ 
+gridz0.06  planar_grid  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  near_dist        : 0.6E-01 m,
+  x_range          : struct(start: -0.3E-01, end: 0.3E-01, np: 100, unit: m),
+  y_range          : struct(start: -0.3E-01, end: 0.3E-01, np: 100),
+  file_name        : gridz0.06.grd
+)
+ 
+gridz0.11  planar_grid  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  near_dist        : 0.11 m,
+  x_range          : struct(start: -0.55E-01, end: 0.55E-01, np: 100, unit: m),
+  y_range          : struct(start: -0.55E-01, end: 0.55E-01, np: 100),
+  file_name        : gridz0.11.grd
+)
+ 
+scene0.11  rectangular_plate  
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.55E-01 m, y: 0.55E-01 m, z: 0.11 m),
+  corner_2         : struct(x: -0.55E-01 m, y: -0.55E-01 m, z: 0.11 m),
+  opp_point        : struct(x: 0.55E-01 m, y: 0.55E-01 m, z: 0.11 m)
+)
+ 
+poscene0.11  po_single_face_scatterer  
+(
+  frequency        : ref(Thz750),
+  scatterer        : ref(scene0.11),
+  method           : po_plus_ptd,
+  po_points        : struct(po1: 100, po2: 100),
+  ptd_points       : sequence
+    (    struct(edge: -1, ptd: 10)
+    ),
+  file_name        : scene0.11.cur
+)
+ 
+receiver  planar_grid  
+(
+  frequency        : ref(Thz750),
+  coor_sys         : ref(coordsystem),
+  x_range          : struct(start: -0.1E-02, end: 0.1E-02, np: 10, unit: m),
+  y_range          : struct(start: -0.1E-02, end: 0.1E-02, np: 10),
+  file_name        : receiver.grd
+)
+
+mask  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: maskcluster  scatterer_cluster  
+(
+  scatterers       : sequence(ref(mask),)
+)
