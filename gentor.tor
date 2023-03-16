@@ -86,3 +86,943 @@ mask22  rectangular_plate
   corner_2         : struct(x: -0.043750 m, y: -0.012500 m, z: 0.100000 m),
   opp_point        : struct(x: -0.037500 m, y: -0.012500 m, z: 0.100000 m)
 )
+
+mask24  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.043750 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.043750 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.037500 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask26  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.043750 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.043750 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.037500 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask28  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.043750 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.043750 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.037500 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask30  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.043750 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.043750 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.037500 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask32  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.043750 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.043750 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.037500 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask34  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask36  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask38  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask40  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask42  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask44  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask46  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask48  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.037500 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.037500 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.031250 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask50  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask52  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask54  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask56  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask58  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask60  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask62  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask64  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.031250 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.031250 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.025000 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask66  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask68  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask70  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask72  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask74  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask76  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask78  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask80  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.025000 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.025000 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.018750 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask82  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask84  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask86  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask88  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask90  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask92  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask94  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask96  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.018750 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.018750 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.012500 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask98  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask100  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask102  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask104  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask106  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask108  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask110  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask112  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.012500 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.012500 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: -0.006250 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask114  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask116  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask118  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask120  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask122  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask124  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask126  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask128  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: -0.006250 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: -0.006250 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.000000 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask130  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask132  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask134  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask136  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask138  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask140  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask142  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask144  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.000000 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.000000 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.006250 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask146  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask148  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask150  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask152  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask154  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask156  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask158  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask160  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.006250 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.006250 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.012500 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask162  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask164  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask166  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask168  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask170  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask172  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask174  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask176  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.012500 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.012500 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.018750 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask178  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask180  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask182  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask184  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask186  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask188  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask190  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask192  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.018750 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.018750 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.025000 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask194  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask196  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask198  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask200  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask202  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask204  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask206  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask208  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.025000 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.025000 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.031250 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask210  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask212  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask214  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask216  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask218  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask220  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask222  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask224  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.031250 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.031250 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.037500 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask226  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask228  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask230  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask232  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask234  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask236  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask238  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask240  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.037500 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.037500 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.043750 m, y: 0.050000 m, z: 0.100000 m)
+)
+
+mask242  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: -0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: -0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: -0.037500 m, z: 0.100000 m)
+)
+
+mask244  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: -0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: -0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: -0.025000 m, z: 0.100000 m)
+)
+
+mask246  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: -0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: -0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: -0.012500 m, z: 0.100000 m)
+)
+
+mask248  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: -0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: 0.000000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: 0.000000 m, z: 0.100000 m)
+)
+
+mask250  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: 0.006250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: 0.012500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: 0.012500 m, z: 0.100000 m)
+)
+
+mask252  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: 0.018750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: 0.025000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: 0.025000 m, z: 0.100000 m)
+)
+
+mask254  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: 0.031250 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: 0.037500 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: 0.037500 m, z: 0.100000 m)
+)
+
+mask256  rectangular_plate
+(
+  coor_sys         : ref(coordsystem),
+  corner_1         : struct(x: 0.043750 m, y: 0.043750 m, z: 0.100000 m),
+  corner_2         : struct(x: 0.043750 m, y: 0.050000 m, z: 0.100000 m),
+  opp_point        : struct(x: 0.050000 m, y: 0.050000 m, z: 0.100000 m)
+)
+maskcluster  scatterer_cluster  
+(
+  scatterers       : sequence(ref(mask2),ref(mask4),ref(mask6),ref(mask8),ref(mask10),ref(mask12),ref(mask14),ref(mask16),ref(mask18),ref(mask20),ref(mask22),ref(mask24),ref(mask26),ref(mask28),ref(mask30),ref(mask32),ref(mask34),ref(mask36),ref(mask38),ref(mask40),ref(mask42),ref(mask44),ref(mask46),ref(mask48),ref(mask50),ref(mask52),ref(mask54),ref(mask56),ref(mask58),ref(mask60),ref(mask62),ref(mask64),ref(mask66),ref(mask68),ref(mask70),ref(mask72),ref(mask74),ref(mask76),ref(mask78),ref(mask80),ref(mask82),ref(mask84),ref(mask86),ref(mask88),ref(mask90),ref(mask92),ref(mask94),ref(mask96),ref(mask98),ref(mask100),ref(mask102),ref(mask104),ref(mask106),ref(mask108),ref(mask110),ref(mask112),ref(mask114),ref(mask116),ref(mask118),ref(mask120),ref(mask122),ref(mask124),ref(mask126),ref(mask128),ref(mask130),ref(mask132),ref(mask134),ref(mask136),ref(mask138),ref(mask140),ref(mask142),ref(mask144),ref(mask146),ref(mask148),ref(mask150),ref(mask152),ref(mask154),ref(mask156),ref(mask158),ref(mask160),ref(mask162),ref(mask164),ref(mask166),ref(mask168),ref(mask170),ref(mask172),ref(mask174),ref(mask176),ref(mask178),ref(mask180),ref(mask182),ref(mask184),ref(mask186),ref(mask188),ref(mask190),ref(mask192),ref(mask194),ref(mask196),ref(mask198),ref(mask200),ref(mask202),ref(mask204),ref(mask206),ref(mask208),ref(mask210),ref(mask212),ref(mask214),ref(mask216),ref(mask218),ref(mask220),ref(mask222),ref(mask224),ref(mask226),ref(mask228),ref(mask230),ref(mask232),ref(mask234),ref(mask236),ref(mask238),ref(mask240),ref(mask242),ref(mask244),ref(mask246),ref(mask248),ref(mask250),ref(mask252),ref(mask254),ref(mask256),)
+)
